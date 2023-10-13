@@ -17,4 +17,10 @@ npx prisma generate
 ```
 npx prisma db push
 ```
+
+### Create db migrations
+```
+npx prisma migrate dev
+```
+
 ## Client

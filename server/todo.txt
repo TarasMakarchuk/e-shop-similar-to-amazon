@@ -1,5 +1,12 @@
+Back
 [] - move the logic of receiving a user beyond the Auth Service
+[] - combine byId and bySlug
 [] -
 [] -
+[] -
+
+
+Front
+[] - create Admin panel
 [] -
 [] -

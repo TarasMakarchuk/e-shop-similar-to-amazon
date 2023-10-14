@@ -1,4 +1,4 @@
-[] - вынести логику получения юзера за рамки Auth Service
+[] - move the logic of receiving a user beyond the Auth Service
 [] -
 [] -
 [] -

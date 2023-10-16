@@ -28,8 +28,7 @@ export class CategoryController {
   @Auth()
   async update(
     @Body() dto: CategoryDto,
-    @Param('id') id: string
-    ) {
+    @Param('id') id: string) {
     return this.categoryService.update(+id, dto);
   }
 

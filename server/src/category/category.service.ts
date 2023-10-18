@@ -11,7 +11,7 @@ export class CategoryService {
   async byId(id: number) {
     const category = this.prisma.category.findUnique({
       where: {
-        id
+        id,
       },
       select: returnCategoryObject,
     });

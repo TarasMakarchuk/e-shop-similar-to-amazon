@@ -14,6 +14,7 @@ const translit = (str: string): string => {
       result += s;
     }
   }
+
   return result;
 };
 

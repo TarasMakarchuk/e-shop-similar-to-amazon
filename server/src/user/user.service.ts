@@ -1,9 +1,9 @@
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
-import { PrismaService } from '../prisma.service';
 import { Prisma } from '@prisma/client';
 import { hash } from 'argon2';
-import { UserDto } from './dto/user.dto';
+import { PrismaService } from '../prisma.service';
 import { returnUserObject } from './constants/return-user.object';
+import { UserDto } from './dto/user.dto';
 
 @Injectable()
 export class UserService {

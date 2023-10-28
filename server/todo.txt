@@ -1,12 +1,12 @@
 Back
-[] - move the logic of receiving a user beyond the Auth Service
-[] - combine byId and bySlug
-[] -
+[] - Move the logic of receiving a user beyond the Auth Service
+[] - Combine byId and bySlug
+[] - Additional check if product exist when user create a review
 [] -
 [] -
 
 
 Front
-[] - create Admin panel
-[] -
+[] - Create Admin panel
+[] - Add average rating in the products card
 [] -

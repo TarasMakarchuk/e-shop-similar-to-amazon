@@ -28,6 +28,7 @@ export class CategoryService {
       },
       select: returnCategoryObject,
     });
+    
     if(!category) throw new NotFoundException('Slug not found');
 
     return category;

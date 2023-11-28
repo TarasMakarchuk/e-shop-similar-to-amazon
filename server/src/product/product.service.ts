@@ -83,7 +83,10 @@ export class ProductService {
 			},
 			select: returnProductObjectFullest,
 		});
-		if (!product) throw new NotFoundException('Product not found');
+		
+		if (!product) {
+			throw new NotFoundException('Product not found');
+		}
 
 		return product;
 	}
@@ -95,7 +98,9 @@ export class ProductService {
 			},
 			select: returnProductObjectFullest,
 		});
-		if (!category) throw new NotFoundException('Slug not found');
+		if (!category) {
+			throw new NotFoundException('Slug not found');
+		}
 
 		return category;
 	}

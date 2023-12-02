@@ -98,6 +98,7 @@ export class ProductService {
 			},
 			select: returnProductObjectFullest,
 		});
+
 		if (!category) {
 			throw new NotFoundException('Slug not found');
 		}
@@ -139,6 +140,7 @@ export class ProductService {
 			},
 			select: returnProductObject,
 		});
+
 		if (!products) throw new NotFoundException('Products not found');
 
 		return products;
@@ -153,6 +155,7 @@ export class ProductService {
 				slug: '',
 			},
 		});
+		
 		return product.id;
 	}
 

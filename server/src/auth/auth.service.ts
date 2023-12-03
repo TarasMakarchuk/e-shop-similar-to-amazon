@@ -99,7 +99,9 @@ export class AuthService {
     });
 
     if (!user) throw new NotFoundException('User not found');
+
     const isValid = await verify(user.password, dto.password);
+    
     if (!isValid) throw new UnauthorizedException('Invalid credentials');
 
     return user;

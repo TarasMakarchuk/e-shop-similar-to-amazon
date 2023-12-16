@@ -141,7 +141,6 @@ export class ProductService {
 			},
 			select: returnProductObject,
 		});
-
 		if (!products) throw new NotFoundException('Products not found');
 
 		return products;

@@ -14,8 +14,7 @@ export class AuthService {
   ) {}
 
   async register(dto: AuthDto) {
-    const {email} = dto;
-
+    const { email } = dto;
     const existUser = await this.prisma.user.findUnique({
       where: {
         email,
@@ -63,7 +62,9 @@ export class AuthService {
 
   async getNewTokens(refreshToken: string) {
     const result = await this.jwt.verifyAsync(refreshToken);
-    if(!result) throw new UnauthorizedException('Invalid refresh token');
+    if (!result) {
+      throw new UnauthorizedException('Invalid refresh token');
+    }
 
     const user = await this.prisma.user.findUnique({
       where: {

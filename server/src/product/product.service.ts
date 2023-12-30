@@ -115,7 +115,9 @@ export class ProductService {
 			},
 			select: returnProductObjectFullest,
 		});
-		if (!products) throw new NotFoundException('Products not found');
+		if (!products) {
+			throw new NotFoundException('Products not found');
+		}
 
 		return products;
 	}
@@ -123,8 +125,9 @@ export class ProductService {
 	async getSimilar(id: number) {
 		const currentProduct = await this.byId(id);
 
-		if (!currentProduct)
+		if (!currentProduct) {
 			throw new NotFoundException('Current product not found');
+		}
 
 		const products = await this.prisma.product.findMany({
 			where: {

@@ -23,4 +23,9 @@ npx prisma db push
 npx prisma migrate dev
 ```
 
+### Db seed
+```
+npm run seed
+```
+
 ## Client

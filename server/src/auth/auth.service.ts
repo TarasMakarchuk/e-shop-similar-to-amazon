@@ -14,8 +14,7 @@ export class AuthService {
   ) {}
 
   async register(dto: AuthDto) {
-    const {email} = dto;
-
+    const { email } = dto;
     const existUser = await this.prisma.user.findUnique({
       where: {
         email,
@@ -44,11 +43,9 @@ export class AuthService {
 
   private async issueTokens(userId: number) {
     const data = {id: userId};
-
     const accessToken = this.jwt.sign(data, {
       expiresIn: '1h',
     });
-
     const refreshToken = this.jwt.sign(data, {
       expiresIn: '7d',
     });
@@ -65,7 +62,10 @@ export class AuthService {
 
   async getNewTokens(refreshToken: string) {
     const result = await this.jwt.verifyAsync(refreshToken);
-    if(!result) throw new UnauthorizedException('Invalid refresh token');
+    if (!result) {
+      throw new UnauthorizedException('Invalid refresh token');
+    }
+
     const user = await this.prisma.user.findUnique({
       where: {
         id: result.id,
@@ -97,9 +97,15 @@ export class AuthService {
       }
     });
 
-    if (!user) throw new NotFoundException('User not found');
+    if (!user) {
+      throw new NotFoundException('User not found');
+    }
+
     const isValid = await verify(user.password, dto.password);
-    if (!isValid) throw new UnauthorizedException('Invalid credentials');
+    
+    if (!isValid) {
+      throw new UnauthorizedException('Invalid credentials');
+    }
 
     return user;
   }

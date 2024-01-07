@@ -21,7 +21,9 @@ export class AuthService {
       },
     });
 
-    if (existUser) throw new BadRequestException('User is already exists');
+    if (existUser) {
+      throw new BadRequestException('User is already exists');
+    }
 
     const user = await this.prisma.user.create({
       data: {

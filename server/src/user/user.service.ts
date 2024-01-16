@@ -43,7 +43,9 @@ export class UserService {
       }
     });
 
-    if (isSameUser && id !== isSameUser.id) throw new BadRequestException('Email is already in use');
+    if (isSameUser && id !== isSameUser.id) {
+      throw new BadRequestException('Email is already in use');
+    }
 
     const user = await this.byId(id);
 

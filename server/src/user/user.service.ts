@@ -42,7 +42,6 @@ export class UserService {
         email: dto.email,
       }
     });
-
     if (isSameUser && id !== isSameUser.id) {
       throw new BadRequestException('Email is already in use');
     }

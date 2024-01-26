@@ -115,6 +115,7 @@ export class ProductService {
 			},
 			select: returnProductObjectFullest,
 		});
+		
 		if (!products) {
 			throw new NotFoundException('Products not found');
 		}

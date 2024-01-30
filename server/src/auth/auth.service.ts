@@ -76,7 +76,6 @@ export class AuthService {
         id: result.id,
       },
     });
-
     const tokens = await this.issueTokens(user.id);
 
     return {

@@ -28,7 +28,6 @@ export class UserService {
         ...selectObject,
       },
     });
-
     if (!user) {
       throw new NotFoundException('User not found');
     }

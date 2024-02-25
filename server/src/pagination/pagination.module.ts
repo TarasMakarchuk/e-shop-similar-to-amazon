@@ -5,4 +5,5 @@ import { PaginationService } from './pagination.service';
   providers: [PaginationService],
   exports: [PaginationService],
 })
+  
 export class PaginationModule {}

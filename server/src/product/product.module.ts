@@ -9,4 +9,5 @@ import { PaginationService } from 'src/pagination/pagination.service';
 	controllers: [ProductController],
 	providers: [ProductService, PrismaService, PaginationService],
 })
+	
 export class ProductModule {}

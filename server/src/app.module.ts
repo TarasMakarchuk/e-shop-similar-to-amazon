@@ -27,4 +27,5 @@ import { PaginationModule } from './pagination/pagination.module';
   controllers: [AppController],
   providers: [AppService, PrismaService],
 })
+  
 export class AppModule {}

@@ -29,4 +29,5 @@ export class UserController {
   ) {
     return this.userService.toggleFavoriteProduct(id, +productId);
   }
+  
 }

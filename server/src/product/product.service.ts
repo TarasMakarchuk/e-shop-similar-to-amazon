@@ -162,7 +162,6 @@ export class ProductService {
 				slug: '',
 			},
 		});
-
 		return product.id;
 	}
 

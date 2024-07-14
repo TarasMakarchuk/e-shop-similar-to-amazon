@@ -68,6 +68,7 @@ export class ProductService {
 			skip,
 			take: perPage,
 		});
+		
 		return {
 			products,
 			length: await this.prisma.product.count({

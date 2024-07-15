@@ -22,6 +22,7 @@ export class ReviewController {
 		@Body() dto: ReviewDto,
 		@Param('productId') productId: number,
 	) {
+		
 		return this.reviewService.create(id, dto, +productId);
 	}
 }

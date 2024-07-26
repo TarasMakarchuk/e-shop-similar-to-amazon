@@ -34,7 +34,6 @@ export class CategoryService {
     if (!category) {
       throw new NotFoundException('Slug not found');
     }
-
     return category;
   }
 

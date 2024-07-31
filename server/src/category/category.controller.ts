@@ -51,5 +51,4 @@ export class CategoryController {
 	async delete(@Param('id') id: string) {
 		return this.categoryService.delete(+id);
 	}
-	
 }

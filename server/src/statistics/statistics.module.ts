@@ -8,4 +8,5 @@ import { UserService } from 'src/user/user.service';
 	controllers: [StatisticsController],
 	providers: [StatisticsService, PrismaService, UserService],
 })
+	
 export class StatisticsModule {}

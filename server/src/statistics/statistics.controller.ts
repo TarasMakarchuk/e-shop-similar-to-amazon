@@ -12,4 +12,5 @@ export class StatisticsController {
   getMainStatistics(@CurrentUser('id') id: number) { 
     return this.statisticsService.getMain(id);
   }
+  
 }

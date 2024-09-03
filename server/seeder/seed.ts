@@ -55,7 +55,7 @@ const createProducts = async (quantity: number) => {
 		products.push(product);
 	}
 
-	console.log(`Created ${products.length} products`);
+	console.info(`Created ${products.length} products`);
 };
 
 async function main() {

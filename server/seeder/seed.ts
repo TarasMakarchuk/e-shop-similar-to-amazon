@@ -8,6 +8,7 @@ const prisma = new PrismaClient();
 
 const createProducts = async (quantity: number) => {
 	const products: Product[] = [];
+	
 	for (let i = 0; i < quantity; i++) {
 		const productName = faker.commerce.productName();
 		const categoryName = faker.commerce.department();

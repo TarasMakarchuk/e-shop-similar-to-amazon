@@ -8,7 +8,8 @@ const translit = (str: string): string => {
   for (let i = 0, l = str.length; i < l;  i++) {
     const s = str.charAt(i);
     let n = ua.indexOf(s);
-    if(n >= 0) {
+   
+    if (n >= 0) {
       result += en[n];
     } else {
       result += s;

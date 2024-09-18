@@ -51,6 +51,7 @@ export class AuthService {
 		const accessToken = this.jwt.sign(data, {
 			expiresIn: '1h',
 		});
+		
 		const refreshToken = this.jwt.sign(data, {
 			expiresIn: '7d',
 		});
@@ -67,6 +68,7 @@ export class AuthService {
 
 	async getNewTokens(refreshToken: string) {
 		const result = await this.jwt.verifyAsync(refreshToken);
+		
 		if (!result) {
 			throw new UnauthorizedException('Invalid refresh token');
 		}

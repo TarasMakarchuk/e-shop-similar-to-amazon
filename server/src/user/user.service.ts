@@ -73,6 +73,7 @@ export class UserService {
 		if (!user) {
 			throw new NotFoundException('User not found');
 		}
+		
 		const isProductExists = user.favorites.some(
 			product => product.id === productId,
 		);

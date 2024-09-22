@@ -23,6 +23,7 @@ export class StatisticsService {
 		const totalAmount: number = 1000;
 
 		console.log(user.orders);
+		
 		return [
 			{
 				name: 'Orders',

@@ -61,14 +61,14 @@ export class ProductService {
 			: {};
 
 		const { perPage, skip } = this.paginationService.getPagination(dto);
-		
+
 		const products = await this.prisma.product.findMany({
 			where: prismaSearchTermFilter,
 			orderBy: prismaSort,
 			skip,
 			take: perPage,
 		});
-		
+
 		return {
 			products,
 			length: await this.prisma.product.count({
@@ -84,7 +84,7 @@ export class ProductService {
 			},
 			select: returnProductObjectFullest,
 		});
-		
+
 		if (!product) {
 			throw new NotFoundException('Product not found');
 		}
@@ -116,7 +116,7 @@ export class ProductService {
 			},
 			select: returnProductObjectFullest,
 		});
-		
+
 		if (!products) {
 			throw new NotFoundException('Products not found');
 		}
@@ -145,7 +145,7 @@ export class ProductService {
 			},
 			select: returnProductObject,
 		});
-		
+
 		if (!products) {
 			throw new NotFoundException('Products not found');
 		}
@@ -162,7 +162,7 @@ export class ProductService {
 				slug: '',
 			},
 		});
-		
+
 		return product.id;
 	}
 
@@ -195,5 +195,4 @@ export class ProductService {
 			},
 		});
 	}
-	
 }

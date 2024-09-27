@@ -19,7 +19,6 @@ export class CategoryService {
     if (!category) {
       throw new NotFoundException('Category not found');
     }
-
     return category;
   }
 

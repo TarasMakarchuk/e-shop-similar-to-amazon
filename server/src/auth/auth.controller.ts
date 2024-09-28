@@ -24,4 +24,5 @@ export class AuthController {
   async getNewTokens(@Body() dto: RefreshTokenDto) {
     return this.authService.getNewTokens(dto.refreshToken);
   }
+  
 }

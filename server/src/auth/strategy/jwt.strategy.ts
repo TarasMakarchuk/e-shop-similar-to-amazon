@@ -5,7 +5,6 @@ import { ConfigService } from '@nestjs/config';
 import { PrismaService } from '../../prisma.service';
 import { User } from '@prisma/client';
 
-
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
   constructor(
@@ -26,4 +25,5 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
       },
     });
   }
+  
 }

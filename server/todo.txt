@@ -1,5 +1,13 @@
-[] - вынести логику получения юзера за рамки Auth Service
+Back
+[] - Move the logic of receiving a user beyond the Auth Service
+[] - Combine byId and bySlug
+[] - Additional check if product exist when user create a review
+[] - Finish statistics - show total user's orders sum count 2:17:40
+[] - Additional check category ID when we create a product
 [] -
-[] -
-[] -
+
+
+Front
+[] - Create Admin panel
+[] - Add average rating in the products card
 [] -

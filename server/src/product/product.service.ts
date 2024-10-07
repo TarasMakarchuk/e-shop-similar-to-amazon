@@ -186,6 +186,7 @@ export class ProductService {
 				},
 			},
 		});
+		
 	}
 
 	async delete(id: number) {
@@ -195,5 +196,4 @@ export class ProductService {
 			},
 		});
 	}
-	
 }

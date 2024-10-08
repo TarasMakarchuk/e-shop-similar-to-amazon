@@ -10,7 +10,7 @@ import { ProductDto } from './dto/product.dto';
 import { generateSlug } from 'src/utils/generate-slug';
 import { GetAllProductsDto } from './dto/get-all-products.dto';
 import { PaginationService } from '../pagination/pagination.service';
-import { ProductSortEnum } from './interfaces/products-sort.enum';
+import { ProductSort } from './interfaces/products-sort.enum';
 
 @Injectable()
 export class ProductService {
@@ -23,14 +23,18 @@ export class ProductService {
 		const { sort, searchTerm } = dto;
 		const prismaSort: Prisma.ProductOrderByWithRelationInput[] = [];
 
-		if (sort === ProductSortEnum.LOW_PRICE) {
-			prismaSort.push({ price: 'asc' });
-		} else if (sort === ProductSortEnum.HIGH_PRICE) {
-			prismaSort.push({ price: 'desc' });
-		} else if (sort === ProductSortEnum.OLDEST) {
-			prismaSort.push({ createdAt: 'asc' });
-		} else {
-			prismaSort.push({ createdAt: 'desc' });
+		switch (sort) {
+			case ProductSort.LOW_PRICE:
+				prismaSort.push({ price: 'asc' });
+				break;
+			case ProductSort.HIGH_PRICE:
+				prismaSort.push({ price: 'desc' });
+				break;
+			case ProductSort.OLDEST:
+				prismaSort.push({ createdAt: 'asc' });
+				break;
+			default:
+				prismaSort.push({ createdAt: 'desc' });
 		}
 
 		const prismaSearchTermFilter: Prisma.ProductWhereInput = searchTerm
@@ -186,7 +190,6 @@ export class ProductService {
 				},
 			},
 		});
-		
 	}
 
 	async delete(id: number) {

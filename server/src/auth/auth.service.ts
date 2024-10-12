@@ -113,7 +113,6 @@ export class AuthService {
 		if (!isValid) {
 			throw new UnauthorizedException('Invalid credentials');
 		}
-
 		return user;
 	}
 }

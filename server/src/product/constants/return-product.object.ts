@@ -12,7 +12,6 @@ export const returnProductObject: Prisma.ProductSelect = {
   slug: true,
   createdAt: true,
 };
-
 export const returnProductObjectFullest: Prisma.ProductSelect = {
   ...returnProductObject,
   reviews: {
